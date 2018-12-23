@@ -1,0 +1,27 @@
+{
+  "name": "hot-2",
+  "version": "0.0.1",
+  "description": "remake of the old one",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivanholl/HoT2.git"
+  },
+  "author": "Arelam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ivanholl/HoT2/issues"
+  },
+  "homepage": "https://github.com/Ivanholl/HoT2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "firebase": "^5.7.1",
+    "firebase-admin": "^5.5.0"
+  }
+}
