@@ -10,7 +10,7 @@ import { combineReducers } from 'redux';
 import authReducers from './auth.reducers';
 
 const rootReducers = {
-    auth: authReducers
+    auth: authReducers,    
 }
 
 export default combineReducers(rootReducers);

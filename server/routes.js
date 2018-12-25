@@ -3,6 +3,8 @@ const router = express.Router();
 const db = require('./firestore.js');
 
 router.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
@@ -11,6 +13,18 @@ router.get('/', (req, res) => {
         message: 'Home'
     });
 })
+
+router.post('/login', (req, res) => {
+    console.log(req);
+    if (req.body && req.body.email && req.body.pass) {
+        res.json({
+            email: req.body.email,
+            pass: req.body.pass,
+            lastLogin: Date.now('dd/mm/yy')
+        });
+    }
+})
+
 
 router.post('/new', (req, res ,err)  => {
     if (req.body && req.body.email && req.body.pass) {

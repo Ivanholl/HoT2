@@ -28,8 +28,7 @@ class LoginModal extends React.Component {
     }
     onLogin = (credentials) => {
         const { dispatch } = this.props;
-        debugger
-        dispatch(authActions.setCredentials(credentials))
+        dispatch(authActions.login(credentials))
     }
     render () {
         return (
