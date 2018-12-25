@@ -8,9 +8,13 @@ function setCredentials(credentials) {
     }
 }
 
+function logout() {
+    return (dispatch) => dispatch(setCredentials(''))
+}
+
 function login(credentials) {
     return (dispatch) => {
-        axiosInstance.axiosPost('/login', credentials)
+        axiosInstance.axiosPost('/users/login', credentials)
             .then((response) => {
                 console.log(response);
                 dispatch(setCredentials(response))
@@ -22,6 +26,21 @@ function login(credentials) {
 
 }
 
+function register(credentials) {
+    return (dispatch) => {
+        axiosInstance.axiosPost('/users/register', credentials)
+            .then((response) => {
+                console.log(response);
+                dispatch(setCredentials(response))
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+}
 export default {
-    login
+    login,
+    logout,
+    register
 }

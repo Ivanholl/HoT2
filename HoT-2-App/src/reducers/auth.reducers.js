@@ -1,14 +1,13 @@
 import { SET_CREDENTIALS } from '../actions/actionsTypes.js'
 
 const initialState = {
-    auth: {}
+    // auth: {}
 }
 
 export default function (state = initialState, action) {
     switch (action.type) {
         case SET_CREDENTIALS:
-        // return state.set('auth', action.payload)
-            return state = Object.assign({}, action.payload);
+            return state = Object.assign({},  action.payload);
         default:
             return state;
     }
